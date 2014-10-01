@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour {
 				}
 
 				if(activeSquareCount == NumSpaces) {
-					StartGame = false;
+					//StartGame = false;
 				}
 			} else {
 				countedTime += Time.deltaTime;
