@@ -4,10 +4,13 @@ using System.Collections;
 public class ClickController : MonoBehaviour {
 
 	public AnimationClip ClickAnimation;
+	bool clicked = false;
 
 	//When it gets clicked!
 	void OnMouseUpAsButton() {
-		StartCoroutine(playAnimation());
+		if(!clicked) {
+			StartCoroutine(playAnimation());
+		}
 	}
 
 	IEnumerator playAnimation() {

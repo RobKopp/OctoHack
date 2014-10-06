@@ -50,8 +50,10 @@
      <Compile Include="Assets\Scripts\3WeekPrototype\CustomYields.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\DragController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\EndingLevelController.cs" />
+     <Compile Include="Assets\Scripts\3WeekPrototype\FinalGridActioner.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\FlickingController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\GridActioner.cs" />
+     <Compile Include="Assets\Scripts\3WeekPrototype\LastScreenColorController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\LevelController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\LevelEditor\EditorControls.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\LevelEditor\GameObjectDefinition.cs" />
