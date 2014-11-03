@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
+using System.Runtime.Serialization.Formatters.Binary;
 #endif
 using System.Collections;
 using System.Collections.Generic;
@@ -17,8 +18,11 @@ public class EditorControls : MonoBehaviour {
 	static List<GameObject> mapping = new List<GameObject>();
 
 	public string FileName;
+	
 
 	public static string FILE_PATH = "Assets/Levels/";
+
+
 
 
 	static EditorControls() {
@@ -44,15 +48,10 @@ public class EditorControls : MonoBehaviour {
 		StreamWriter sw = new StreamWriter(FILE_PATH+FileName+".beans");
 		Debug.Log ("Exporting Level...");
 		string serializedLevel = "";
-		ArrayList level = new ArrayList();
-		GameObject levelRoot = GameObject.Find("LevelRoot");
-		foreach(Transform child in levelRoot.transform) {
-			GameObjectDefinition def = child.GetComponent<GameObjectDefinition>();
+		Dictionary<string, object> level;
+		GameObject levelRoot = GameObject.FindGameObjectWithTag("LevelRoot");
 
-			if(def != null) {
-				level.Add (def.GetSerialization());
-			}
-		}
+		level = levelRoot.GetComponent<GameObjectDefinition>().GetSerialization();
 		if(level.Count <=0){
 			Debug.Log ("Level has no definition!");
 		} else {
@@ -99,8 +98,7 @@ public class EditorControls : MonoBehaviour {
 				if(itemDef.ContainsKey("components")) {
 					Dictionary<string,object> comps = itemDef["components"] as Dictionary<string, object>;
 					foreach(string key in comps.Keys) {
-						Dictionary<string,object> options = (Dictionary<string,object>)comps[key];
-						((ISerializable)itemObj.GetComponent(key)).DeSerialize(options);
+						(itemObj.GetComponent(key) as ISerializable).DeSerialize(comps[key] as Dictionary<string,object>);
 					}
 				}
 				if(itemDef.ContainsKey("children")) {
@@ -146,28 +144,33 @@ public class EditorControls : MonoBehaviour {
 			fileToLoad = levelFileName;
 		}
 
+		fileToLoad += ".beans";
+
 		StreamReader sr = new StreamReader(FILE_PATH+fileToLoad);
 		string levelDefinition = sr.ReadToEnd();
 		sr.Close();
 
-		GameObject root = GameObject.Find ("LevelRoot");
+//		GameObject root = GameObject.Find ("LevelRoot");
 
-		if(root== null) {
-			root = new GameObject();
-		} else {
-			if(root.transform.childCount > 0) {
-				DestroyChildren(root.transform);
-			}
-		}
+//		if(root== null) {
+//
+//		} else {
+//			if(root.transform.childCount > 0) {
+//				DestroyChildren(root.transform);
+//			}
+//		}
 		
-		root.name = "LevelRoot";
+//		root.name = "LevelRoot";
+		Dictionary<string,object> level = (Dictionary<string,object>)MiniJSON.Json.Deserialize(levelDefinition);
 
-		List<object> level = (List<object>)MiniJSON.Json.Deserialize(levelDefinition);
+		GameObject root = createChild(level);
 
-		foreach(object item in level) {
-			Dictionary<string,object> itemDef = item as Dictionary<string,object>;
-			GameObject child = createChild(itemDef);
-			child.transform.parent = root.transform;
-		}
+//		List<object> level = (List<object>)MiniJSON.Json.Deserialize(levelDefinition);
+//
+//		foreach(object item in level) {
+//			Dictionary<string,object> itemDef = item as Dictionary<string,object>;
+//			GameObject child = createChild(itemDef);
+//			child.transform.parent = root.transform;
+//		}
 	}
 }

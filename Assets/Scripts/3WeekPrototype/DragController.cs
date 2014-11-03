@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+using MiniJSON;
 
-public class DragController : MonoBehaviour {
+public class DragController : MonoBehaviour, ISerializable {
 
 	public enum DragDirection {
 		LeftRight,
@@ -18,8 +19,7 @@ public class DragController : MonoBehaviour {
 	public DragDirection dragDirection;
 
 	public Transform GoalLoc;
-
-	private Transform startingLoc;
+	public Vector3 _goalLoc;
 
 
 	private bool clicked;
@@ -31,6 +31,26 @@ public class DragController : MonoBehaviour {
 		} else if(dragDirection == DragDirection.UpDown) {
 			renderer.material.color = colors[1];
 		}
+
+		if(GoalLoc != null) {
+			_goalLoc = GoalLoc.position;
+		}
+	}
+
+	public Dictionary<string,string> Serialize() {
+		Dictionary<string,string> def = new Dictionary<string, string>();
+		Vector3 goalLoc = _goalLoc;
+		if(GoalLoc != null) {
+			goalLoc = GoalLoc.position;
+		}
+		def.Add ("G",goalLoc.ToString());
+		
+		return def;
+	}
+	
+	public void DeSerialize(Dictionary<string,object> def) {
+		_goalLoc = Json.ParseVector3((string)def["G"]);
+		
 	}
 
 	void OnMouseDown() {
@@ -51,11 +71,10 @@ public class DragController : MonoBehaviour {
 				pos.x = Mathf.Clamp(pos.x, LeftBound, RightBound);
 			} else {
 				pos.y = mousePos.y;
-				Debug.Log (pos.y);
 				pos.y = Mathf.Clamp(pos.y, LowerBound, UpperBound);
 			}
 			transform.position = pos;
-			if((transform.position - GoalLoc.position).sqrMagnitude <= 0.01) {
+			if((transform.position - _goalLoc).sqrMagnitude <= 0.01) {
 				youDidGood();
 			}
 		}

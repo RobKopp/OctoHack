@@ -9,16 +9,25 @@ public class GridActioner : MonoBehaviour, ISerializable {
 	public AnimationClip HideAnimation;
 
 
-	public Dictionary<string, string> Serialize() {
+	public virtual Dictionary<string, string> Serialize() {
 		Dictionary<string,string> props = new Dictionary<string, string>();
-		props.Add("SA", ShowAnimation.name);
-		props.Add ("HA", HideAnimation.name);
+		if(ShowAnimation != null) {
+			props.Add("SA", ShowAnimation.name);
+		}
+
+		if(HideAnimation != null) {
+			props.Add ("HA", HideAnimation.name);
+		}
 		return props;
 	}
 
-	public void DeSerialize(Dictionary<string, object> definition) {
-		ShowAnimation = animation.GetClip((string)definition["SA"]);
-		HideAnimation = animation.GetClip((string)definition["HA"]);
+	public virtual void DeSerialize(Dictionary<string, object> definition) {
+		if(definition.ContainsKey("SA")) {
+			ShowAnimation = animation.GetClip((string)definition["SA"]);
+		}
+		if(definition.ContainsKey("HA")) {
+			HideAnimation = animation.GetClip((string)definition["HA"]);
+		}
 	}
 
 	void CalculateGoodPoints() {
@@ -35,9 +44,13 @@ public class GridActioner : MonoBehaviour, ISerializable {
 		if(objectClicked.tag == "Good") {
 			totalGoodPoints -= 1;
 			if(totalGoodPoints <= 0) {
-				transform.parent.SendMessage("CompleteLevel");
+				finishLevel ();
 			}
 		}
+	}
+
+	protected void finishLevel() {
+		GameObject.FindGameObjectWithTag("LevelRoot").SendMessage("CompleteLevel");
 	}
 
 	public void Show() {

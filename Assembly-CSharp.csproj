@@ -49,9 +49,11 @@
      <Compile Include="Assets\Scripts\3WeekPrototype\ClickController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\CustomYields.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\DragController.cs" />
+     <Compile Include="Assets\Scripts\3WeekPrototype\EndComputerController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\EndingLevelController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\FinalGridActioner.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\FlickingController.cs" />
+     <Compile Include="Assets\Scripts\3WeekPrototype\GameStateController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\GridActioner.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\LastScreenColorController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\LevelController.cs" />
@@ -66,10 +68,15 @@
      <Compile Include="Assets\Scripts\PieceConfig.cs" />
      <Compile Include="Assets\Scripts\PointMover.cs" />
      <Compile Include="Assets\Scripts\SquareController.cs" />
+     <Compile Include="Assets\SomeOtherValues.cs" />
+     <Compile Include="Assets\TestTransformSpeed.cs" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{791ADA36-38FC-E2F3-F3F0-6DF96622D938}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{EB73F131-9E63-CFD9-16CF-3250CE6F602B}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

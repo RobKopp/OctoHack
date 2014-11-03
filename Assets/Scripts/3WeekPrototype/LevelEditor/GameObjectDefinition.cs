@@ -4,6 +4,9 @@ using UnityEditor;
 #endif
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System;
 
 public class GameObjectDefinition : MonoBehaviour {
 
@@ -13,7 +16,7 @@ public class GameObjectDefinition : MonoBehaviour {
 		Dictionary<string,object> objectProperties = new Dictionary<string,object>();
 
 		string objName = gameObject.name;
-		Object prefab = PrefabUtility.GetPrefabParent(gameObject);
+		UnityEngine.Object prefab = PrefabUtility.GetPrefabParent(gameObject);
 		if(prefab != null) {
 			objName = prefab.name;
 		}
@@ -22,11 +25,16 @@ public class GameObjectDefinition : MonoBehaviour {
 		objectProperties.Add ("pos", transform.position);
 		objectProperties.Add ("scale", transform.localScale);
 		objectProperties.Add ("rot", transform.localEulerAngles);
+		objectProperties.Add ("tag", gameObject.tag);
 
 
 		Dictionary<string, object> compDefs = new Dictionary<string, object>();
 		Component[] comps = GetComponents(typeof(Component));
+
 		foreach(Component comp in comps) {
+
+			//We want to serialize the component and add it to our definition
+
 			ISerializable serComp = comp as ISerializable;
 			if(serComp != null) {
 				compDefs.Add (comp.GetType ().Name, serComp.Serialize());

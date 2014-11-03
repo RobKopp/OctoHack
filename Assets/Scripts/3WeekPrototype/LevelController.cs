@@ -6,6 +6,8 @@ public class LevelController : MonoBehaviour,ISerializable {
 	public float TotalTime;
 	public float LevelRewardSeconds;
 
+	private GameObject Grids;
+
 	private float currentTime;
 
 	private int currentLevel = 0;
@@ -13,7 +15,8 @@ public class LevelController : MonoBehaviour,ISerializable {
 	private bool started = false;
 
 	void Start() {
-		foreach(Transform child in transform) {
+		Grids = transform.FindChild("Grids").gameObject;
+		foreach(Transform child in Grids.transform) {
 			child.gameObject.SetActive(false);
 		}
 		showLevel();
@@ -27,8 +30,8 @@ public class LevelController : MonoBehaviour,ISerializable {
 	}
 
 	public void DeSerialize(Dictionary<string,object> definition) {
-		TotalTime = (float)definition["TT"];
-		LevelRewardSeconds = (float) definition["LRS"];
+		TotalTime = float.Parse((string)definition["TT"]);
+		LevelRewardSeconds = float.Parse((string)definition["LRS"]);
 	}
 
 	// Update is called once per frame
@@ -42,11 +45,11 @@ public class LevelController : MonoBehaviour,ISerializable {
 	}
 
 	public void CompleteLevel() {
-		GameObject level = transform.GetChild(currentLevel).gameObject;
+		GameObject level = Grids.transform.GetChild(currentLevel).gameObject;
 		level.SendMessage("Hide");
 		currentLevel += 1;
 		currentTime -= LevelRewardSeconds;
-		if(currentLevel >= transform.childCount) {
+		if(currentLevel >= Grids.transform.childCount) {
 			Debug.Log("You Win!");
 		} else {
 			showLevel();
@@ -54,7 +57,8 @@ public class LevelController : MonoBehaviour,ISerializable {
 	}
 
 	void showLevel() {
-		GameObject level = transform.GetChild(currentLevel).gameObject;
+		GameObject level = Grids.transform.GetChild(currentLevel).gameObject;
+		Debug.Log (level.name);
 		level.SetActive(true);
 		level.SendMessage("Show");
 	}
