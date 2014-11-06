@@ -7,10 +7,6 @@ Project("{7268F886-E1F7-4256-ABB7-BFF7C81492C2}") = "OctoHack", "Assembly-CSharp
 EndProject
 Project("{7268F886-E1F7-4256-ABB7-BFF7C81492C2}") = "OctoHack", "Assembly-CSharp-Editor.csproj", "{F2C4767D-D94C-F5A5-068A-DFDC893F990E}"
 EndProject
-Project("{7268F886-E1F7-4256-ABB7-BFF7C81492C2}") = "OctoHack", "Assembly-UnityScript-firstpass.unityproj", "{EB73F131-9E63-CFD9-16CF-3250CE6F602B}"
-EndProject
-Project("{7268F886-E1F7-4256-ABB7-BFF7C81492C2}") = "OctoHack", "Assembly-UnityScript.unityproj", "{9349C63C-895D-BF32-347A-78874B0DC729}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,19 +25,11 @@ Global
 		{F2C4767D-D94C-F5A5-068A-DFDC893F990E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2C4767D-D94C-F5A5-068A-DFDC893F990E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2C4767D-D94C-F5A5-068A-DFDC893F990E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB73F131-9E63-CFD9-16CF-3250CE6F602B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB73F131-9E63-CFD9-16CF-3250CE6F602B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB73F131-9E63-CFD9-16CF-3250CE6F602B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB73F131-9E63-CFD9-16CF-3250CE6F602B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9349C63C-895D-BF32-347A-78874B0DC729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9349C63C-895D-BF32-347A-78874B0DC729}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9349C63C-895D-BF32-347A-78874B0DC729}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9349C63C-895D-BF32-347A-78874B0DC729}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																												GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

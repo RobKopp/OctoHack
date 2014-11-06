@@ -49,6 +49,10 @@
      <Compile Include="Assets\Scripts\3WeekPrototype\ClickController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\CustomYields.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\DragController.cs" />
+     <Compile Include="Assets\Scripts\3WeekPrototype\Email.cs" />
+     <Compile Include="Assets\Scripts\3WeekPrototype\EmailController.cs" />
+     <Compile Include="Assets\Scripts\3WeekPrototype\EmailNavigationArrowController.cs" />
+     <Compile Include="Assets\Scripts\3WeekPrototype\EmailScreenController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\EndComputerController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\EndingLevelController.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\FinalGridActioner.cs" />
@@ -60,6 +64,8 @@
      <Compile Include="Assets\Scripts\3WeekPrototype\LevelEditor\EditorControls.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\LevelEditor\GameObjectDefinition.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\LevelEditor\ISerializable.cs" />
+     <Compile Include="Assets\Scripts\3WeekPrototype\PlayerGlobalsSingleton.cs" />
+     <Compile Include="Assets\Scripts\3WeekPrototype\PlayerProgression.cs" />
      <Compile Include="Assets\Scripts\3WeekPrototype\StartingLevelController.cs" />
      <Compile Include="Assets\Scripts\ClickerController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
@@ -68,12 +74,7 @@
      <Compile Include="Assets\Scripts\PieceConfig.cs" />
      <Compile Include="Assets\Scripts\PointMover.cs" />
      <Compile Include="Assets\Scripts\SquareController.cs" />
-     <Compile Include="Assets\SomeOtherValues.cs" />
-     <Compile Include="Assets\TestTransformSpeed.cs" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
- <Reference Include="Library\ScriptAssemblies\Assembly-UnityScript-firstpass">
- <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
+     <None Include="Assets\Configuration\Email Flow.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">

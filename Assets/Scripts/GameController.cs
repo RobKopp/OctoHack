@@ -29,12 +29,10 @@ public class GameController : MonoBehaviour {
 		if(StartGame) {
 			if(itsTime()) {
 				countedTime = 0;
-				bool done = false;
 				GameObject square = null;
 			
-					int space = Random.Range(1,15);
-					square = GameObject.Find(space.ToString());
-					done = square.GetComponent<SquareController>().Activated;
+				int space = Random.Range(1,15);
+				square = GameObject.Find(space.ToString());
 			
 
 				activeSquareCount += 1;

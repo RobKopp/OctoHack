@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\EditorControlsEditor.cs" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\Configuration\Email Flow.txt" />
  <Reference Include="Assets\AssetStoreTools\Editor\AssetStoreTools">
  <HintPath>Assets\AssetStoreTools\Editor\AssetStoreTools.dll</HintPath>
  </Reference>
@@ -67,12 +67,8 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{791ADA36-38FC-E2F3-F3F0-6DF96622D938}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{EB73F131-9E63-CFD9-16CF-3250CE6F602B}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{E5D01B2D-89FA-6C37-D1BD-FEEEDB0DFC7F}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript.unityproj">
-      <Project>{9349C63C-895D-BF32-347A-78874B0DC729}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

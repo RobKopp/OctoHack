@@ -9,7 +9,7 @@ public class LastScreenColorController : MonoBehaviour {
 		Neutral
 	}
 
-	Color[] TypeColors;
+	public Color[] TypeColors;
 	
 	void UpdateColor(ComputerType type) {
 		switch(type) {

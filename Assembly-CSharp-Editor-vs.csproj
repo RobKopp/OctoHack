@@ -47,13 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\EditorControlsEditor.cs" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
- <Reference Include="Library\ScriptAssemblies\Assembly-UnityScript-firstpass">
- <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
- <Reference Include="Library\ScriptAssemblies\Assembly-UnityScript">
- <HintPath>Library\ScriptAssemblies\Assembly-UnityScript.dll</HintPath>
- </Reference>
+     <None Include="Assets\Configuration\Email Flow.txt" />
  <Reference Include="Assets\AssetStoreTools\Editor\AssetStoreTools">
  <HintPath>Assets\AssetStoreTools\Editor\AssetStoreTools.dll</HintPath>
  </Reference>

@@ -163,7 +163,7 @@ public class EditorControls : MonoBehaviour {
 //		root.name = "LevelRoot";
 		Dictionary<string,object> level = (Dictionary<string,object>)MiniJSON.Json.Deserialize(levelDefinition);
 
-		GameObject root = createChild(level);
+		createChild(level);
 
 //		List<object> level = (List<object>)MiniJSON.Json.Deserialize(levelDefinition);
 //

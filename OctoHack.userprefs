@@ -1,10 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/3WeekPrototype/LevelController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/3WeekPrototype/EmailNavigationArrowController.cs">
     <Files>
-      <File FileName="Assets/Scripts/3WeekPrototype/LevelController.cs" Line="28" Column="55" />
-      <File FileName="Assets/Scripts/3WeekPrototype/DragController.cs" Line="22" Column="8" />
-      <File FileName="Assets/Scripts/3WeekPrototype/GridActioner.cs" Line="53" Column="48" />
+      <File FileName="Assets/Scripts/3WeekPrototype/GameStateController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/3WeekPrototype/EmailScreenController.cs" Line="90" Column="61" />
+      <File FileName="Assets/Scripts/3WeekPrototype/EmailController.cs" Line="19" Column="3" />
+      <File FileName="Assets/Scripts/3WeekPrototype/EmailNavigationArrowController.cs" Line="18" Column="42" />
+      <File FileName="Assets/Scripts/3WeekPrototype/ClickController.cs" Line="23" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
